@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Semana 05 - APIs e Assincronismo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1f3c88;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #1f3c88;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+
+        .status {
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        dl {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 8px;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin: 0;
+        }
+
+        #historico-cep {
+            padding-left: 20px;
+        }
+
+        .pokemon-card {
+            margin-top: 15px;
+        }
+
+        .pokemon-card img {
+            width: 150px;
+            image-rendering: pixelated;
+        }
+    </style>
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>
+            Semana 05 - Objetos, Dados e Assincronismo
+        </h1>
+
+
+        <!-- PARTE 1 -->
+
+        <section>
+
+            <h2>
+                Parte 1 - Manipulação de Dados
+            </h2>
+
+            <p>
+                Os resultados dos pedidos são exibidos no Console do navegador.
+            </p>
+
+        </section>
+
+
+        <!-- PARTE 2 -->
+
+        <section>
+
+            <h2>
+                Buscador de CEP
+            </h2>
+
+            <form id="form-cep">
+
+                <input
+                    type="text"
+                    id="cep"
+                    placeholder="Digite o CEP"
+                    maxlength="9"
+                >
+
+                <button
+                    id="botao-cep"
+                    type="submit"
+                >
+                    Buscar CEP
+                </button>
+
+            </form>
+
+
+            <p
+                id="status-cep"
+                class="status"
+                aria-live="polite"
+            ></p>
+
+
+            <dl id="resultado-cep"></dl>
+
+
+            <h3>
+                Histórico de pesquisas
+            </h3>
+
+            <ul id="historico-cep"></ul>
+
+        </section>
+
+
+        <!-- PARTE 3 -->
+
+        <section>
+
+            <h2>
+                Mini Pokédex
+            </h2>
+
+            <form id="form-pokemon">
+
+                <input
+                    type="text"
+                    id="pokemon"
+                    placeholder="Digite o nome do Pokémon"
+                >
+
+                <button
+                    id="botao-pokemon"
+                    type="submit"
+                >
+                    Buscar Pokémon
+                </button>
+
+            </form>
+
+
+            <p
+                id="status-pokemon"
+                class="status"
+                aria-live="polite"
+            ></p>
+
+
+            <div
+                id="resultado-pokemon"
+                class="pokemon-card"
+            ></div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
